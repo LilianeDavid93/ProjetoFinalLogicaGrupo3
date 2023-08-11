@@ -1,8 +1,10 @@
 programa
 {	
+	inclua biblioteca Tipos --> t
 	inclua biblioteca Util --> u
 	
 	cadeia nome
+	logico usuarioEstaLogado
 	
 	cadeia socios[][] = 
 	{{"Liliane", "123"},{"Sabrina", "456"},{"Lucas", "789"},{"Igor", "987"},{"Matheus", "654"}}
@@ -14,16 +16,28 @@ programa
 	}
 	
 	funcao inicio()
-	{	
-		logico resultado = Login()
-		se(resultado == falso)
-		{ 
-			escreva("Usúario ou senha ínvalidos!")
-		}
-		senao
-		{
+	{		
+		se(RecepcaoInicial())
+		{	
+			limpa()
+			faca
+			{
+				usuarioEstaLogado = Login()
+				se(usuarioEstaLogado == falso)
+				{
+					escreva("Usúario ou senha ínvalidos!\n")
+					u.aguarde(2000)
+					limpa()	
+				}
+				
+			}enquanto(usuarioEstaLogado == falso)
+				 
+			limpa()				
 			menu()
-		}									
+		}
+
+		escreva("\n============VOLTE SEMPRE=============")
+													
 	}	
 
 
@@ -46,6 +60,39 @@ programa
 
 		retorne falso		
 	}
+
+	funcao logico RecepcaoInicial()
+	{		
+		cadeia opcao
+		faca
+		{
+			escreva("=========Seja Bem-Vindo(a)===========\n")
+			escreva("===========LOJA PET TEC==============\n")
+			escreva("1 - Realizar login.\n")
+			escreva("0 - Sair.\n")
+			leia(opcao)
+		
+		}enquanto(nao ValidarOpcao(opcao))		
+		
+		se(opcao == "1")
+		{
+			retorne verdadeiro
+		}
+
+		retorne falso		
+	}
+
+	funcao logico ValidarOpcao(cadeia opcao)
+	{
+		se(nao t.cadeia_e_inteiro(opcao,10) ou (opcao != "1" e opcao != "0"))
+		{
+			escreva("Valor inválido!")
+			u.aguarde(2000)
+			limpa()
+			retorne falso			
+		}
+		retorne verdadeiro		
+	}
 	
 //Funcoes de menu
 
@@ -53,7 +100,7 @@ programa
 
            inteiro categoria
 			
-		 escreva("======== MENU TEC PET ========\n")	
+		 escreva("======== MENU PET TEC ========\n")	
            escreva(nome, " temos alguns produtos pra você! \n")
            escreva("Para acessar nossos produtos, escolha uma categoria abaixo, DIGITE: \n")
            u.aguarde(100)
@@ -180,9 +227,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1025; 
+ * @POSICAO-CURSOR = 1797; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {produtos, 10, 8, 8};
+ * @SIMBOLOS-INSPECIONADOS = {produtos, 12, 8, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
