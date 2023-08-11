@@ -1,6 +1,7 @@
 programa
 {	
 	inclua biblioteca Util --> u
+	
 	cadeia nome
 	
 	cadeia socios[][] = 
@@ -9,7 +10,7 @@ programa
 	cadeia produtos[][] = 
 	{
 		{"Alimentos", "Ração", "Sachê", "Petisco "},{"Brinquedos", "Bolinha", "Ratinho", "Osso"},
-		{"Acessórios","Coleira", "Roupa", "Sapato"},{"Descricao","Estoque","Preco"}
+		{"Acessórios","Coleira", "Roupa", "Sapato"},{"Descricao","Estoque","Preco","nome"}
 	}
 	
 	funcao inicio()
@@ -21,7 +22,7 @@ programa
 		}
 		senao
 		{
-			escreva("Carregar menu aqui.")
+			menu()
 		}									
 	}	
 
@@ -114,7 +115,7 @@ programa
            se(alimento >3){
            menuAlimento() 
            }
-            se(alimento == 0){
+            se(alimento == 0){//Detalhamento dos produtos
             limpa()
             menu()
             
@@ -179,9 +180,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 56; 
+ * @POSICAO-CURSOR = 1025; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {produtos, 9, 8, 8};
+ * @SIMBOLOS-INSPECIONADOS = {produtos, 10, 8, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
