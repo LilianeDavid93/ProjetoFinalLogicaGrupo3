@@ -3,6 +3,7 @@ programa
 {	
 	inclua biblioteca Tipos --> t
 	inclua biblioteca Util --> u
+	inclua biblioteca Graficos -->g
 	
 	cadeia nome
 	logico usuarioEstaLogado
@@ -11,7 +12,7 @@ programa
 	{{"Liliane", "123"},{"Sabrina", "456"},{"Lucas", "789"},{"Igor", "987"},{"Matheus", "654"}}
 
 	funcao inicio()
-	{		
+	{	
 		se(RecepcaoInicial())
 		{	
 			limpa()
@@ -29,18 +30,21 @@ programa
 				 
 			limpa()				
 			menu()
+			
 		}
 
 		escreva("\n============VOLTE SEMPRE=============")
 													
 	}	
-
-
+	
 	funcao logico Login()
 	{
 		cadeia senha
-		escreva("========== Bem vindo a loja PET TEC ===========")
-		escreva("\nDigite seu nome: ")
+		Logo()
+		escreva("Bem vindo a loja PET TEC")
+		escreva("\nDigite suas credenciais a baixo para efetuar o login.")
+		u.aguarde(2000)
+		escreva("\n\nDigite seu nome: ")
 		leia(nome)
 		escreva("\nDigite sua senha: ")
 		leia(senha)
@@ -55,6 +59,36 @@ programa
 
 		retorne falso		
 	}
+
+	funcao Logo()
+	
+	{	
+		para(inteiro j = 0; j <200; j ++)
+		{
+		
+		limpa()
+		u.aguarde(40)
+		
+	escreva ("                 *****   ********  **********      **********    ********       *********  \n")
+	
+	para (inteiro i = 1; i <= 2; i++){
+	escreva("                 *    *  **            **              **        **          ******   \n")
+	}
+	
+	
+	escreva("                 ****    ********      **              **        ********    ******     \n")
+	
+	para (inteiro i = 1; i <= 2; i++){
+	escreva("                 **      **            **              **        **          ******     \n")
+	
+	}
+	escreva("                 **      ********      **              **        ********       *********\n")
+	
+	}	 
+	u.aguarde(40)
+	
+		
+}
 
 	funcao logico RecepcaoInicial()
 	{		
@@ -93,7 +127,7 @@ programa
 
 	funcao menu(){
 
-           inteiro categoria
+           cadeia categoria
 			
 		 escreva("======== MENU PET TEC ========\n")	
            escreva(nome, " temos alguns produtos pra você! \n")
@@ -102,17 +136,28 @@ programa
            escreva(" 1 - Para acessar nossos ALIMENTOS \n") 
            u.aguarde(100)
            escreva(" 2 - Para acessar nossos BRINQUEDOS \n")
+           Binquedo()
            u.aguarde(100)
            escreva(" 3 - Para acessar nossos ACESSORIOS \n")
            u.aguarde(100)
            escreva(" 0 - Para SAIR\n")
            leia(categoria)
            limpa()
-            se(categoria >3)
-            menu()
+            se(t.cadeia_e_inteiro(categoria, 10))
+			{
+	            se(t.cadeia_para_inteiro(categoria, 10) > 3 ou t.cadeia_para_inteiro(categoria, 10) < 0)
+			{
+	           	menu()
+	           }
+			}    
+			senao
+			{
+				menu()
+			}
+           	escolha(t.cadeia_para_inteiro(categoria, 10)) 
+           	{   
 
-           escolha (categoria){
-           	
+           	           	
            	 caso 1 :
            	 u.aguarde(100)
            	 menuAlimento()
@@ -140,65 +185,77 @@ programa
 
 	funcao menuAlimento(){
 
-     	 inteiro alimento
+     	 cadeia alimento
      	
-           escreva("======== MENU ALIMENTOS ======== \n")
-           escreva(nome, " estes sao os nosso alimentos disponiveis \n")
+           escreva("======== MENU ALIMENTOS ========\n")
+           escreva(nome + ", esses sao os nossos alimentos disponiveis \n")
            u.aguarde(100)
            escreva(" 1 - Ração \n")
+          Racao()
            u.aguarde(100)
            escreva(" 2 - Sachê \n")
+          Sache()
            u.aguarde(100)
            escreva(" 3 - Petisco \n")
+          Petisco()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(alimento)
            limpa()
-            se(alimento >3){
-           menuAlimento() 
-           }
-            se(alimento == 0){//Detalhamento dos produtos
-            limpa()
-            menu()
-            }
-           	escolha(alimento) {
+
+			se(t.cadeia_e_inteiro(alimento, 10))
+			{
+	            se(t.cadeia_para_inteiro(alimento, 10) > 3 ou t.cadeia_para_inteiro(alimento, 10) < 0)
+			{
+	           	menuAlimento()
+	           }
+			}    
+			senao
+			{
+				menuAlimento()
+			}
+           	escolha(t.cadeia_para_inteiro(alimento, 10)) 
+           	{
            		caso 1: 
-			 		
-			 		
-			 		
+			 				
 			 		escreva("Ração para cães, gatos e passaros.", "\n")
 			 		escreva("Estoque da ração para cão :300Kg ")
 			 		escreva(" Preço da ração: R$10.00 o Kg", "\n")
 			 		escreva("Estoque da ração para gato :200Kg")
 			 		escreva(" Preço da ração: R$ 10.50 o Kg", "\n")
 			 		escreva("Estoque dos grãos para pássaros :100Kg")
-			 		escreva(" Preço dos grãos:5.20 o Kg", "\n")
-			 		pare
-
+			 		escreva(" Preço dos grãos:5.20 o Kg", "\n\n\n")
+			 		
+					u.aguarde(5000)
+					menuAlimento()
+					pare
+					
 			 		caso 2: 
-			 		
-			 		
-			 		
+			 				 		
 			 		escreva ("Seu pet vai adorar essa comida especial. Para cães e gatos, exclusivamente.", "\n")
 			 		escreva("Estoque do Sachê de cachorro: 270 Unidades ")
 			 		escreva(" Preço: R$ 14.00 a Unidade", "\n")
 			 		escreva("Estoque do Sachê de gato: 245 Unidades ")
-			 		escreva(" Preço: R$ 15.00 a Unidade")
-			 		pare
+			 		escreva(" Preço: R$ 15.00 a Unidade\n\n\n")
+
+			 		u.aguarde(5000)
+					menuAlimento()
+					pare
 
 			 		caso 3: 
-			 		
-			 		
-			 		
+			 					 				 		
 			 		escreva ("Petiscos especiais para recompensar e divertir seu pet.", "\n")
 			 		escreva("Estoque do petisco para cães: 180 Unidades ")
 			 		escreva(" Preço: R$19.99", "\n")
 					escreva("Estoque do petisco para gatos: 172 Unidades  ")
-			 		escreva(" Preço: R$ 23.50")
-			 		pare
+			 		escreva(" Preço: R$ 23.50\n\n\n")
+
+			 		u.aguarde(5000)
+					menuAlimento()
+					pare
 
 			 		caso 0: 
-			 		menuAlimento()
+			 		menu()
 			 		pare
 
 			 		caso contrario :
@@ -211,7 +268,7 @@ programa
 
 	funcao menuBrinquedo(){
 
-      	inteiro brinquedo
+      	cadeia brinquedo
      	
            escreva("======== MENU BRINQUEDOS ======== \n")
            escreva(nome, " Estes são os brinquedos disponiveis para os pets: \n")
@@ -219,21 +276,29 @@ programa
            escreva(" 1 - Bolinha \n")
            u.aguarde(100)
            escreva(" 2 - Bichinho de pelúcia \n")
+           Ratinho()
            u.aguarde(100)
            escreva(" 3 - Osso \n")
+           Osso()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(brinquedo)
            limpa()
-            se(brinquedo>3){
-            menuBrinquedo()
-            }
            
-            se(brinquedo == 0){
-            limpa()
-            menu() 
-            	}
-			escolha(brinquedo) {
+            se(t.cadeia_e_inteiro(brinquedo, 10))
+			{
+	            se(t.cadeia_para_inteiro(brinquedo, 10) > 3 ou t.cadeia_para_inteiro(brinquedo, 10) < 0)
+			{
+	           	menuBrinquedo()
+	           }
+			}    
+			senao
+			{
+				menuBrinquedo()
+			}
+           	escolha(t.cadeia_para_inteiro(brinquedo, 10)) 
+           	{
+			
 			 		caso 1: 
 			 		
 			 		
@@ -258,13 +323,13 @@ programa
 					escreva(" Preço: R$ 15.00 a Unidade ")
 					pare
 
-					caso 4:
+					caso 0:
+					menu()
+					pare
+					
+					caso contrario :
 					 menuBrinquedo()  
 					pare
-
-					caso contrario :
-			 		escreva("Caracter inválido. Tente novamente usando os numeros listados.")
-			 		pare
 			 
 			 	}
    		  }
@@ -273,29 +338,37 @@ programa
 
 	funcao menuAcessorio(){
 
-      	inteiro acessorio
+      	cadeia acessorio
    		
            escreva("======== MENU ACESSORIOS ======== \n")
+           Acessorio()
            escreva(nome, " Estes são os nossos acessórios disponíveis: \n")
            u.aguarde(100)
            escreva(" 1 - Coleira \n")
+           Coleira()
            u.aguarde(100)
            escreva(" 2 - Roupinha \n")
            u.aguarde(100)
            escreva(" 3 - Casinha \n")
+           Casinha()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(acessorio)
            limpa()
-            se(acessorio>3){
-            menuAcessorio()
-            }
-            
-             se(acessorio == 0){
-             limpa()
-             menu()
-             	}
-             	escolha (acessorio) {
+           
+            se(t.cadeia_e_inteiro(acessorio, 10))
+			{
+	            se(t.cadeia_para_inteiro(acessorio, 10) > 3 ou t.cadeia_para_inteiro(acessorio, 10) < 0)
+			{
+	           	menuAcessorio()
+	           }
+			}    
+			senao
+			{
+				menuBrinquedo()
+			}
+           	escolha(t.cadeia_para_inteiro(acessorio, 10)) 
+           	{
 			 		caso 1: 
 			 		
 			 		
@@ -325,17 +398,130 @@ programa
 			 		escreva("Estoque de casinhas para gatos: 250 Unidades ")
 			 		escreva(" Preço: R$100.00 a Unidade ")
 			 		pare
+
+					caso 0:
+					menu()
+					pare
 					
-					caso 4:
+					caso contrario :
 					menuAcessorio()
 					pare
-
-					caso contrario :
-			 		escreva("Caracter inválido. Tente novamente usando os numeros listados.")
-			 		pare
 			 	}        
+           }
            
-          }
+     funcao Acessorio()
+	{                                       
+     	inteiro imagem = g.carregar_imagem("o3/dog.jfif")
+			g.iniciar_modo_grafico(verdadeiro)
+			g.definir_dimensoes_janela(800, 770)
+			g.definir_titulo_janela("acessorio")
+			g.desenhar_imagem(0, 0, imagem)
+			g.renderizar()
+			u.aguarde(7000)
+   }
+	funcao Casinha()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3./casinha.JFIF")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(480, 480)
+		g.definir_titulo_janela("casinha")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+   funcao Coleira()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3/Coleira.jfif")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(900,800)
+		g.definir_titulo_janela("coleira")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Osso()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./osso.jfif")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(600, 370)
+		g.definir_titulo_janela("osso")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Petisco()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./petisco.jfif")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(600, 470)
+		g.definir_titulo_janela("petisco")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Racao()
+	{                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./comida.jfif")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(780, 750)
+		g.definir_titulo_janela("RAÇÂO")
+		
+		g.desenhar_imagem(5, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Ratinho()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./ratinho.jfif")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(1000, 900)
+		g.definir_titulo_janela("ratinho")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Sache()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./sache.png")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(1000, 870)
+		g.definir_titulo_janela("sache")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
+	funcao Binquedo()
+	{
+                                        
+		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3/Brinquedo.JFIF")
+		g.iniciar_modo_grafico(verdadeiro)
+		g.definir_dimensoes_janela(780, 810)
+		g.definir_titulo_janela("brinquedo")
+		
+		g.desenhar_imagem(0, 0, imagem)
+		
+		g.renderizar()
+		u.aguarde(7000)
+	}
 }
 	
     		 
@@ -344,7 +530,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8079; 
+ * @POSICAO-CURSOR = 13500; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
