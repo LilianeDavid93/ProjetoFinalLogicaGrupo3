@@ -35,8 +35,7 @@ programa
 		escreva("\n============VOLTE SEMPRE=============")
 													
 	}	
-
-
+	
 	funcao logico Login()
 	{
 		cadeia senha
@@ -56,6 +55,7 @@ programa
 
 		retorne falso		
 	}
+	
 
 	funcao logico RecepcaoInicial()
 	{		
@@ -94,7 +94,7 @@ programa
 
 	funcao menu(){
 
-           inteiro categoria
+           cadeia categoria
 			
 		 escreva("======== MENU PET TEC ========\n")	
            escreva(nome, " temos alguns produtos pra você! \n")
@@ -109,11 +109,21 @@ programa
            escreva(" 0 - Para SAIR\n")
            leia(categoria)
            limpa()
-            se(categoria >3)
-            menu()
+            se(t.cadeia_e_inteiro(categoria, 10))
+			{
+	            se(t.cadeia_para_inteiro(categoria, 10) > 3 ou t.cadeia_para_inteiro(categoria, 10) < 0)
+			{
+	           	menu()
+	           }
+			}    
+			senao
+			{
+				menu()
+			}
+           	escolha(t.cadeia_para_inteiro(categoria, 10)) 
+           	{   
 
-           escolha (categoria){
-           	
+           	           	
            	 caso 1 :
            	 u.aguarde(100)
            	 menuAlimento()
@@ -141,10 +151,10 @@ programa
 
 	funcao menuAlimento(){
 
-     	 inteiro alimento
+     	 cadeia alimento
      	
-           escreva("======== MENU ALIMENTOS ======== \n")
-           escreva(nome, " estes sao os nosso alimentos disponiveis \n")
+           escreva("======== MENU ALIMENTOS ========\n")
+           escreva(nome + ", esses sao os nossos alimentos disponiveis \n")
            u.aguarde(100)
            escreva(" 1 - Ração \n")
            u.aguarde(100)
@@ -155,51 +165,60 @@ programa
            escreva(" 0 - Menu inicial \n")
            leia(alimento)
            limpa()
-            se(alimento >3){
-           menuAlimento() 
-           }
-            se(alimento == 0){//Detalhamento dos produtos
-            limpa()
-            menu()
-            }
-           	escolha(alimento) {
+
+			se(t.cadeia_e_inteiro(alimento, 10))
+			{
+	            se(t.cadeia_para_inteiro(alimento, 10) > 3 ou t.cadeia_para_inteiro(alimento, 10) < 0)
+			{
+	           	menuAlimento()
+	           }
+			}    
+			senao
+			{
+				menuAlimento()
+			}
+           	escolha(t.cadeia_para_inteiro(alimento, 10)) 
+           	{
            		caso 1: 
-			 		
-			 		
-			 		
+			 				
 			 		escreva("Ração para cães, gatos e passaros.", "\n")
 			 		escreva("Estoque da ração para cão :300Kg ")
 			 		escreva(" Preço da ração: R$10.00 o Kg", "\n")
 			 		escreva("Estoque da ração para gato :200Kg")
 			 		escreva(" Preço da ração: R$ 10.50 o Kg", "\n")
 			 		escreva("Estoque dos grãos para pássaros :100Kg")
-			 		escreva(" Preço dos grãos:5.20 o Kg", "\n")
-			 		pare
-
+			 		escreva(" Preço dos grãos:5.20 o Kg", "\n\n\n")
+			 		
+					u.aguarde(5000)
+					menuAlimento()
+					pare
+					
 			 		caso 2: 
-			 		
-			 		
-			 		
+			 				 		
 			 		escreva ("Seu pet vai adorar essa comida especial. Para cães e gatos, exclusivamente.", "\n")
 			 		escreva("Estoque do Sachê de cachorro: 270 Unidades ")
 			 		escreva(" Preço: R$ 14.00 a Unidade", "\n")
 			 		escreva("Estoque do Sachê de gato: 245 Unidades ")
-			 		escreva(" Preço: R$ 15.00 a Unidade")
-			 		pare
+			 		escreva(" Preço: R$ 15.00 a Unidade\n\n\n")
+
+			 		u.aguarde(5000)
+					menuAlimento()
+					pare
 
 			 		caso 3: 
-			 		
-			 		
-			 		
+			 					 				 		
 			 		escreva ("Petiscos especiais para recompensar e divertir seu pet.", "\n")
 			 		escreva("Estoque do petisco para cães: 180 Unidades ")
 			 		escreva(" Preço: R$19.99", "\n")
 					escreva("Estoque do petisco para gatos: 172 Unidades  ")
-			 		escreva(" Preço: R$ 23.50")
-			 		pare
+			 		escreva(" Preço: R$ 23.50\n\n\n")
+
+			 		u.aguarde(5000)
+					menuAlimento()
+					pare
 
 			 		caso 0: 
-			 		menuAlimento()
+			 		menu()
 			 		pare
 
 			 		caso contrario :
@@ -212,7 +231,7 @@ programa
 
 	funcao menuBrinquedo(){
 
-      	inteiro brinquedo
+      	cadeia brinquedo
      	
            escreva("======== MENU BRINQUEDOS ======== \n")
            escreva(nome, " Estes são os brinquedos disponiveis para os pets: \n")
@@ -226,15 +245,21 @@ programa
            escreva(" 0 - Menu inicial \n")
            leia(brinquedo)
            limpa()
-            se(brinquedo>3){
-            menuBrinquedo()
-            }
            
-            se(brinquedo == 0){
-            limpa()
-            menu() 
-            	}
-			escolha(brinquedo) {
+            se(t.cadeia_e_inteiro(brinquedo, 10))
+			{
+	            se(t.cadeia_para_inteiro(brinquedo, 10) > 3 ou t.cadeia_para_inteiro(brinquedo, 10) < 0)
+			{
+	           	menuBrinquedo()
+	           }
+			}    
+			senao
+			{
+				menuBrinquedo()
+			}
+           	escolha(t.cadeia_para_inteiro(brinquedo, 10)) 
+           	{
+			
 			 		caso 1: 
 			 		
 			 		
@@ -259,13 +284,13 @@ programa
 					escreva(" Preço: R$ 15.00 a Unidade ")
 					pare
 
-					caso 4:
+					caso 0:
+					menu()
+					pare
+					
+					caso contrario :
 					 menuBrinquedo()  
 					pare
-
-					caso contrario :
-			 		escreva("Caracter inválido. Tente novamente usando os numeros listados.")
-			 		pare
 			 
 			 	}
    		  }
@@ -274,7 +299,7 @@ programa
 
 	funcao menuAcessorio(){
 
-      	inteiro acessorio
+      	cadeia acessorio
    		
            escreva("======== MENU ACESSORIOS ======== \n")
            escreva(nome, " Estes são os nossos acessórios disponíveis: \n")
@@ -288,15 +313,20 @@ programa
            escreva(" 0 - Menu inicial \n")
            leia(acessorio)
            limpa()
-            se(acessorio>3){
-            menuAcessorio()
-            }
-            
-             se(acessorio == 0){
-             limpa()
-             menu()
-             	}
-             	escolha (acessorio) {
+           
+            se(t.cadeia_e_inteiro(acessorio, 10))
+			{
+	            se(t.cadeia_para_inteiro(acessorio, 10) > 3 ou t.cadeia_para_inteiro(acessorio, 10) < 0)
+			{
+	           	menuAcessorio()
+	           }
+			}    
+			senao
+			{
+				menuBrinquedo()
+			}
+           	escolha(t.cadeia_para_inteiro(acessorio, 10)) 
+           	{
 			 		caso 1: 
 			 		
 			 		
@@ -326,14 +356,17 @@ programa
 			 		escreva("Estoque de casinhas para gatos: 250 Unidades ")
 			 		escreva(" Preço: R$100.00 a Unidade ")
 			 		pare
+
+					caso 0:
+					menu()
+					pare
 					
-					caso 4:
+					caso contrario :
 					menuAcessorio()
 					pare
+					
 
-					caso contrario :
-			 		escreva("Caracter inválido. Tente novamente usando os numeros listados.")
-			 		pare
+
 			 	}        
            
           }
@@ -345,7 +378,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 106; 
+ * @POSICAO-CURSOR = 3399; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
