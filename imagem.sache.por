@@ -6,7 +6,7 @@ programa
 	funcao inicio()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3./sache.png")
+		inteiro imagem = g.carregar_imagem("sache.png")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(1000, 870)
 		g.definir_titulo_janela("sache")
@@ -23,7 +23,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 348; 
+ * @POSICAO-CURSOR = 76; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
