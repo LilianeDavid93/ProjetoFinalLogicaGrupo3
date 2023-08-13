@@ -6,7 +6,7 @@ programa
 	funcao inicio()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3/Coleira.jfif")
+		inteiro imagem = g.carregar_imagem("Coleira.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(900,800)
 		g.definir_titulo_janela("coleira")
@@ -23,7 +23,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 309; 
+ * @POSICAO-CURSOR = 177; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

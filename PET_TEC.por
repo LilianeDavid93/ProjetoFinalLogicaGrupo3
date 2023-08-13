@@ -41,7 +41,7 @@ programa
 	{
 		cadeia senha
 		Logo()
-		escreva("Bem vindo a loja PET TEC")
+		escreva("\nBem vindo a loja PET TEC")
 		escreva("\nDigite suas credenciais a baixo para efetuar o login.")
 		u.aguarde(2000)
 		escreva("\n\nDigite seu nome: ")
@@ -64,11 +64,8 @@ programa
 	funcao Logo()
 	
 	{	
-		para(inteiro j = 0; j <200; j ++)
-		{
-		
-		limpa()
-		u.aguarde(40)
+		//para(inteiro j = 0; j <20; j ++)
+		//{
 		
 	escreva ("                 *****   ********  **********      **********    ********       *********  \n")
 	
@@ -85,8 +82,8 @@ programa
 	}
 	escreva("                 **      ********      **              **        ********       *********\n")
 	
-	}	 
-	u.aguarde(40)
+	//}	 
+	
 	
 		
 }
@@ -137,7 +134,6 @@ programa
            escreva(" 1 - Para acessar nossos ALIMENTOS \n") 
            u.aguarde(100)
            escreva(" 2 - Para acessar nossos BRINQUEDOS \n")
-           Binquedo()
            u.aguarde(100)
            escreva(" 3 - Para acessar nossos ACESSORIOS \n")
            u.aguarde(100)
@@ -176,7 +172,7 @@ programa
            	  
            	 caso 0 :
            	 u.aguarde(100)
-           	 escreva(nome + " Muito obrigado por visitar nossa loja. Volte um sempre.... \n")
+           	 escreva(nome + " Muito obrigado por visitar nossa loja. Volte sempre.... \n")
                 escreva(" Qualquer dúvida ligue para : \n Telefone: 4002-8922 \n Zap: 2298-2004")
            	 pare
            	 	
@@ -192,13 +188,10 @@ programa
            escreva(nome + ", esses sao os nossos alimentos disponiveis \n")
            u.aguarde(100)
            escreva(" 1 - Ração \n")
-          Racao()
            u.aguarde(100)
            escreva(" 2 - Sachê \n")
-          Sache()
            u.aguarde(100)
            escreva(" 3 - Petisco \n")
-          Petisco()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(alimento)
@@ -232,13 +225,13 @@ programa
 					pare
 					
 			 		caso 2: 
-			 				 		
+ 		
 			 		escreva ("Seu pet vai adorar essa comida especial. Para cães e gatos, exclusivamente.", "\n")
 			 		escreva("Estoque do Sachê de cachorro: 270 Unidades ")
 			 		escreva(" Preço: R$ 14.00 a Unidade", "\n")
 			 		escreva("Estoque do Sachê de gato: 245 Unidades ")
 			 		escreva(" Preço: R$ 15.00 a Unidade\n\n\n")
-
+ 					
 			 		u.aguarde(5000)
 					menuAlimento()
 					pare
@@ -277,10 +270,8 @@ programa
            escreva(" 1 - Bolinha \n")
            u.aguarde(100)
            escreva(" 2 - Bichinho de pelúcia \n")
-           Ratinho()
            u.aguarde(100)
            escreva(" 3 - Osso \n")
-           Osso()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(brinquedo)
@@ -346,12 +337,10 @@ programa
            escreva(nome, " Estes são os nossos acessórios disponíveis: \n")
            u.aguarde(100)
            escreva(" 1 - Coleira \n")
-           Coleira()
            u.aguarde(100)
            escreva(" 2 - Roupinha \n")
            u.aguarde(100)
            escreva(" 3 - Casinha \n")
-           Casinha()
            u.aguarde(100)
            escreva(" 0 - Menu inicial \n")
            leia(acessorio)
@@ -412,7 +401,7 @@ programa
            
      funcao Acessorio()
 	{                                       
-     	inteiro imagem = g.carregar_imagem("o3/dog.jfif")
+     	inteiro imagem = g.carregar_imagem("dog.jfif")
 			g.iniciar_modo_grafico(verdadeiro)
 			g.definir_dimensoes_janela(800, 770)
 			g.definir_titulo_janela("acessorio")
@@ -423,7 +412,7 @@ programa
 	funcao Casinha()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3./casinha.JFIF")
+		inteiro imagem = g.carregar_imagem("casinha.JFIF")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(480, 480)
 		g.definir_titulo_janela("casinha")
@@ -436,7 +425,7 @@ programa
    funcao Coleira()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("C:/progserratc/logicapro/ProjetoFinalLogicaGrupo3/Coleira.jfif")
+		inteiro imagem = g.carregar_imagem("Coleira.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(900,800)
 		g.definir_titulo_janela("coleira")
@@ -449,7 +438,7 @@ programa
 	funcao Osso()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./osso.jfif")
+		inteiro imagem = g.carregar_imagem("osso.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(600, 370)
 		g.definir_titulo_janela("osso")
@@ -462,7 +451,7 @@ programa
 	funcao Petisco()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./petisco.jfif")
+		inteiro imagem = g.carregar_imagem("petisco.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(600, 470)
 		g.definir_titulo_janela("petisco")
@@ -474,7 +463,7 @@ programa
 	}
 	funcao Racao()
 	{                                        
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./comida.jfif")
+		inteiro imagem = g.carregar_imagem("comida.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(780, 750)
 		g.definir_titulo_janela("RAÇÂO")
@@ -487,7 +476,7 @@ programa
 	funcao Ratinho()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./ratinho.jfif")
+		inteiro imagem = g.carregar_imagem("ratinho.jfif")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(1000, 900)
 		g.definir_titulo_janela("ratinho")
@@ -500,7 +489,7 @@ programa
 	funcao Sache()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3./sache.png")
+		inteiro imagem = g.carregar_imagem("sache.png")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(1000, 870)
 		g.definir_titulo_janela("sache")
@@ -513,7 +502,7 @@ programa
 	funcao Binquedo()
 	{
                                         
-		inteiro imagem = g.carregar_imagem("/home/lilianemdj/Documentos/Liliane Residencia/ProjetoFinalLogicaGrupo3/Brinquedo.JFIF")
+		inteiro imagem = g.carregar_imagem("Brinquedo.JFIF")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(780, 810)
 		g.definir_titulo_janela("brinquedo")
@@ -531,8 +520,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-
- * @POSICAO-CURSOR = 13500; 
+ * @POSICAO-CURSOR = 8800; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
