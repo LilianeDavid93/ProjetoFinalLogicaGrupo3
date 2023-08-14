@@ -3,7 +3,7 @@ programa
 {	
 	inclua biblioteca Tipos --> t
 	inclua biblioteca Util --> u
-	inclua biblioteca Graficos -->g
+	inclua biblioteca Graficos --> g
 	
 	cadeia nome
 	logico usuarioEstaLogado
@@ -33,7 +33,7 @@ programa
 			
 		}
 
-		escreva("\n============VOLTE SEMPRE=============")
+		escreva("\n============VOLTE SEMPRE=============\n") //
 													
 	}	
 	
@@ -64,8 +64,7 @@ programa
 	funcao Logo()
 	
 	{	
-		//para(inteiro j = 0; j <20; j ++)
-		//{
+		
 		
 	escreva ("                 *****   ********  **********      **********    ********       *********  \n")
 	
@@ -81,8 +80,7 @@ programa
 	
 	}
 	escreva("                 **      ********      **              **        ********       *********\n")
-	
-	//}	 
+
 	
 	
 		
@@ -210,8 +208,8 @@ programa
 			}
            	escolha(t.cadeia_para_inteiro(alimento, 10)) 
            	{
-           		caso 1: 
-			 				
+           		     caso 1: 
+			 		Racao()		
 			 		escreva("Ração para cães, gatos e passaros.", "\n")
 			 		escreva("Estoque da ração para cão :300Kg ")
 			 		escreva(" Preço da ração: R$10.00 o Kg", "\n")
@@ -219,32 +217,33 @@ programa
 			 		escreva(" Preço da ração: R$ 10.50 o Kg", "\n")
 			 		escreva("Estoque dos grãos para pássaros :100Kg")
 			 		escreva(" Preço dos grãos:5.20 o Kg", "\n\n\n")
-			 		
-					u.aguarde(5000)
+			 		g.encerrar_modo_grafico()
+				  
 					menuAlimento()
 					pare
 					
 			 		caso 2: 
- 		
+ 		               Sache()
 			 		escreva ("Seu pet vai adorar essa comida especial. Para cães e gatos, exclusivamente.", "\n")
 			 		escreva("Estoque do Sachê de cachorro: 270 Unidades ")
 			 		escreva(" Preço: R$ 14.00 a Unidade", "\n")
 			 		escreva("Estoque do Sachê de gato: 245 Unidades ")
 			 		escreva(" Preço: R$ 15.00 a Unidade\n\n\n")
- 					
-			 		u.aguarde(5000)
+ 					g.encerrar_modo_grafico()
+			 		 
 					menuAlimento()
 					pare
 
 			 		caso 3: 
-			 					 				 		
+			 		Petisco()			 				 		
 			 		escreva ("Petiscos especiais para recompensar e divertir seu pet.", "\n")
 			 		escreva("Estoque do petisco para cães: 180 Unidades ")
 			 		escreva(" Preço: R$19.99", "\n")
 					escreva("Estoque do petisco para gatos: 172 Unidades  ")
 			 		escreva(" Preço: R$ 23.50\n\n\n")
+			 		g.encerrar_modo_grafico()
 
-			 		u.aguarde(5000)
+			 		
 					menuAlimento()
 					pare
 
@@ -293,26 +292,35 @@ programa
 			
 			 		caso 1: 
 			 		
-			 		
+			 		bolinha()
 			 		escreva("Uma bolinha que pode ser arremessada e mordida pelo seu pet.", "\n")
 			 		escreva("Estoque: 350 Unidades ")
-			 		escreva(" Preço: R$30.00 a Unidade")
+			 		escreva(" Preço: R$30.00 a Unidade\n\n\n")
+			 		g.encerrar_modo_grafico()
+
+			 		menuBrinquedo() 
 			 		pare
 
 			 		caso 2 :
 			 		
-			 		
+			 		Ratinho()
 			 		escreva("Uma companhia a mais para seu pet.Corre o risco de ser destruíudo caso o pet seja um cão.", "\n")
 			 		escreva("Estoque: 280 Unidades ")
-			 		escreva(" Preço: R$65.00 a Unidade")
+			 		escreva(" Preço: R$65.00 a Unidade\n\n\n")
+			 		g.encerrar_modo_grafico()
+
+			 		menuBrinquedo()
 					pare
 
 					caso 3 :
 					
-					
+					Osso()
 					escreva("Um osso para seu pet morder, e o manter entretido. Recomendado para cães.", "\n")
 					escreva("Estoque:301 Unidades ")
-					escreva(" Preço: R$ 15.00 a Unidade ")
+					escreva(" Preço: R$ 15.00 a Unidade\n\n\n")
+					g.encerrar_modo_grafico()
+
+					menuBrinquedo()
 					pare
 
 					caso 0:
@@ -333,7 +341,6 @@ programa
       	cadeia acessorio
    		
            escreva("======== MENU ACESSORIOS ======== \n")
-           Acessorio()
            escreva(nome, " Estes são os nossos acessórios disponíveis: \n")
            u.aguarde(100)
            escreva(" 1 - Coleira \n")
@@ -360,33 +367,40 @@ programa
            	escolha(t.cadeia_para_inteiro(acessorio, 10)) 
            	{
 			 		caso 1: 
-			 		
-			 		
-			 		escreva("Coleira designada para cães e gatos. Ideais para longos passeios. Tamanhos disponíves para cahorros de pequeno a grande porte.", "\n")
+			 		Coleira()
+			 		escreva("Coleira designada para cães e gatos. Ideais para longos passeios.\nTamanhos disponíves para cahorros de pequeno a grande porte.", "\n")
 			 		escreva("Estoque de coleiras de cães: 550 Unidades ")
-			 		escreva(" Preços: R$30.00 ")
+			 		escreva(" Preços: R$30.00\n")
 			 		escreva("Estoque de coleiras de gatos: 700 Unidades ")
-			 		escreva(" Preços: R$24.99 ")
+			 		escreva(" Preços: R$24.99\n\n\n")	
+			 		g.encerrar_modo_grafico()
+			 			 		
+			 		menuAcessorio() 
 			 		pare
 			 		
 			 		caso 2:
-			 		
-			 		
-			 		escreva("Roupinhas pare deixar seu pet estiloso e aquecido durante períodos frios. Diponivel para cães e gatos, apenas.", "\n")
+			 		roupa()
+			 		escreva("Roupinhas pare deixar seu pet estiloso e aquecido durante períodos frios.\nDiponivel para cães e gatos, apenas.", "\n")
 			 		escreva("Estoque de roupinhas de cães: 300 Unidades")
 			 		escreva("Preço: R$21.90 a Unidade", "\n")
 			 		escreva("Estoque de roupinhas de gatos: 315 Unidades ")
-			 		escreva(" Preço: R$23.99")
+			 		escreva(" Preço: R$23.99\n\n\n")
+			 		g.encerrar_modo_grafico()
+
+			 		menuAcessorio()
 			 		pare
 			 		
 			 		caso 3:
 			 		
-			 		
+			 		Casinha()
 			 		escreva("Um mini-lar para seu pet.Exclusivo para cães e gatos.", "\n")
 			 		escreva("Estoque de casinhas para cães: 200 Unidades ")
 			 		escreva("Preço: R$170.00", "\n")
 			 		escreva("Estoque de casinhas para gatos: 250 Unidades ")
-			 		escreva(" Preço: R$100.00 a Unidade ")
+			 		escreva(" Preço: R$100.00 a Unidade\n\n\n")
+			 		g.encerrar_modo_grafico()
+
+			 		menuAcessorio()
 			 		pare
 
 					caso 0:
@@ -399,15 +413,16 @@ programa
 			 	}        
            }
            
-     funcao Acessorio()
+     funcao roupa()
 	{                                       
-     	inteiro imagem = g.carregar_imagem("dog.jfif")
-			g.iniciar_modo_grafico(verdadeiro)
-			g.definir_dimensoes_janela(800, 770)
-			g.definir_titulo_janela("acessorio")
-			g.desenhar_imagem(0, 0, imagem)
-			g.renderizar()
-			u.aguarde(7000)
+     	inteiro imagem = g.carregar_imagem("roupa.jfif")
+	g.iniciar_modo_grafico(verdadeiro)
+	g.definir_dimensoes_janela(500, 670) 
+	g.definir_titulo_janela("roupa")
+		
+	g.desenhar_imagem(0, 0, imagem)
+	g.renderizar()
+	u.aguarde(2100)
    }
 	funcao Casinha()
 	{
@@ -420,7 +435,7 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
    funcao Coleira()
 	{
@@ -433,7 +448,7 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 	funcao Osso()
 	{
@@ -446,7 +461,7 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 	funcao Petisco()
 	{
@@ -459,7 +474,7 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 	funcao Racao()
 	{                                        
@@ -471,7 +486,7 @@ programa
 		g.desenhar_imagem(5, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 	funcao Ratinho()
 	{
@@ -484,7 +499,7 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 	funcao Sache()
 	{
@@ -497,20 +512,20 @@ programa
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
-	funcao Binquedo()
+	funcao bolinha()
 	{
                                         
 		inteiro imagem = g.carregar_imagem("Brinquedo.JFIF")
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(780, 810)
-		g.definir_titulo_janela("brinquedo")
+		g.definir_titulo_janela("bolinha")
 		
 		g.desenhar_imagem(0, 0, imagem)
 		
 		g.renderizar()
-		u.aguarde(7000)
+		u.aguarde(2100)
 	}
 }
 	
@@ -520,7 +535,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8800; 
+ * @POSICAO-CURSOR = 9439; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
