@@ -1,4 +1,4 @@
-<img align="center" src="ImagenGit" width="800" height="600"/>
+<img align="center" src="PET_2 REDME.png" width="800" height="600"/>
 
 <h1 align="center"> PET TEC!</h1>
 <h2 align="center">Produtos selecionados para seu melhor amigo.</h2>
@@ -18,5 +18,15 @@ Temos uma equipe sempre a disposição, oferecendo suporte personalizado quando 
 Nós do grupo 3 da Residencia em TIC, gostaríamos de agradecer a Déby Souza, pelo ensinamento, paciência e dedicação.
 
 Nosso trabalho foi feito com muito carinho.
+
+GitHub dos integrantes.<br/>
+[Liliane](https://github.com/LilianeDavid93)<br/>
+[Sabrina](https://github.com/sabrinapereiry)<br/>
+[Lucas Rodrigues](https://github.com/LucasGonRo)<br/>
+[Matheus-mOliveira](https://github.com/Matheus-mOliveira)<br/>
+[Igor-Arauj0](https://github.com/Igor-Arauj0)<br/>
+
+
+
 
 
